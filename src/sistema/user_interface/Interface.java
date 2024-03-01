@@ -1,6 +1,6 @@
-package sistema.menu;
+package sistema.user_interface;
 
-public class Menu {
+public class Interface {
 
     public static void menuInicial() {
         System.out.println("===== MENU INICIAL =====");

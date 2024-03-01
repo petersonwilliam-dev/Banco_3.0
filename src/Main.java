@@ -14,7 +14,7 @@ public class Main {
 
         try {
             banco.adicionarConta(conta);
-            banco.adicionarConta(conta1);
+
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
