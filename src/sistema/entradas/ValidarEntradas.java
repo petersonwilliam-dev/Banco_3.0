@@ -3,7 +3,7 @@ package sistema.entradas;
 import java.util.Scanner;
 
 public class ValidarEntradas {
-    
+
     public static String recebeString(Scanner sc, String msg) {
         System.out.print(msg);
         while ((!sc.hasNext()) || (sc.hasNextDouble())) {
@@ -17,13 +17,25 @@ public class ValidarEntradas {
 
     public static int recebeInteiro(Scanner sc, String msg) {
         System.out.print(msg);
-        while ((!sc.hasNextInt())) {
+        while (!sc.hasNextInt()) {
             System.out.println("DIGITE UM VALOR VÁLIDO!");
             sc.nextLine();
             System.out.print(msg);
         }
 
         int resposta = Integer.parseInt(sc.nextLine());
+        return resposta;
+    }
+
+    public static float recebeFloat(Scanner sc, String msg) {
+        System.out.print(msg);
+        while (!sc.hasNextFloat()) {
+            System.out.println("DIGITE UM VALOR VÁLIDO");
+            sc.nextLine();
+            System.out.print(msg);
+        }
+
+        float resposta = Float.parseFloat(sc.nextLine());
         return resposta;
     }
 }
