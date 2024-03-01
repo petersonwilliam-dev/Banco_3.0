@@ -2,13 +2,13 @@ package entidades;
 
 import java.util.Objects;
 
-public class TitularDaConta {
+public class Pessoa {
     private int id;
     private String nome;
     private String cpf;
     private String numero_telefone;
 
-    public TitularDaConta(String nome, String cpf, String numero_telefone) {
+    public Pessoa(String nome, String cpf, String numero_telefone) {
         this.nome = nome;
         this.cpf = cpf;
         this.numero_telefone = numero_telefone;
@@ -45,7 +45,7 @@ public class TitularDaConta {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof TitularDaConta that)) return false;
+        if (!(o instanceof Pessoa that)) return false;
         return  Objects.equals(getCpf(), that.getCpf());
     }
 

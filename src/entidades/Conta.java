@@ -2,13 +2,13 @@ package entidades;
 
 public class Conta {
     private int numero_conta;
-    private TitularDaConta titularConta;
+    private Pessoa titularConta;
     private double saldo;
 
     private String usuario;
     private String senha;
 
-    public Conta(int numero_conta, TitularDaConta titularConta, double saldo, String usuario, String senha) {
+    public Conta(int numero_conta, Pessoa titularConta, double saldo, String usuario, String senha) {
         this.numero_conta = numero_conta;
         this.titularConta = titularConta;
         this.saldo = saldo;
@@ -16,7 +16,7 @@ public class Conta {
         this.senha = senha;
     }
 
-    public Conta(TitularDaConta titularConta, String usuario, String senha) {
+    public Conta(Pessoa titularConta, String usuario, String senha) {
         this.titularConta = titularConta;
         this.usuario = usuario;
         this.senha = senha;
@@ -26,7 +26,7 @@ public class Conta {
         return numero_conta;
     }
 
-    public TitularDaConta getTitularConta() {
+    public Pessoa getTitularConta() {
         return titularConta;
     }
 
