@@ -1,5 +1,9 @@
 package sistema.user_interface;
 
+import entidades.Conta;
+
+import java.util.Scanner;
+
 public class Interface {
 
     public static void menuInicial() {
@@ -17,4 +21,5 @@ public class Interface {
         System.out.println("4 - CONSULTAR MEUS DADOS");
         System.out.println("5 - EXCLUIR MINHA CONTA");
     }
+
 }

@@ -8,6 +8,12 @@ public class Pessoa {
     private String cpf;
     private String numero_telefone;
 
+    public Pessoa(int id, String nome, String cpf, String numero_telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.numero_telefone = numero_telefone;
+    }
     public Pessoa(String nome, String cpf, String numero_telefone) {
         this.nome = nome;
         this.cpf = cpf;
