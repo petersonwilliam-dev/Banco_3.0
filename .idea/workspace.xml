@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="919fa7ba-ebcf-44db-9b0d-2915126f0ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sistema/user_interface/CreateEnt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sistema/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sistema/user_interface/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entidades/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sistema/conversor/ConverterEmLista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sistema/conversor/ConverterEmLista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sistema/user_interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sistema/user_interface/Interface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
