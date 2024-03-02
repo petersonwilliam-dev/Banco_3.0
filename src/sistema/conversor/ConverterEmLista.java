@@ -27,7 +27,7 @@ public class ConverterEmLista {
         List listaContas = new ArrayList<Conta>();
         while (resultSet.next()) {
             Pessoa pessoa = new Pessoa(resultSet.getInt(7), resultSet.getString(8), resultSet.getString(9), resultSet.getString(10));
-            Conta conta = new Conta(resultSet.getInt(1), pessoa, resultSet.getFloat(2), resultSet.getString(3), resultSet.getString(4));
+            Conta conta = new Conta(resultSet.getInt(1), pessoa, resultSet.getFloat(2), resultSet.getString(3), resultSet.getString(4), resultSet.getInt(5));
             listaContas.add(conta);
         }
 

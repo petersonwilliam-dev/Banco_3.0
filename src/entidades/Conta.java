@@ -8,12 +8,15 @@ public class Conta {
     private String usuario;
     private String senha;
 
-    public Conta(int numero_conta, Pessoa titularConta, double saldo, String usuario, String senha) {
+    private int id_titular;
+
+    public Conta(int numero_conta, Pessoa titularConta, double saldo, String usuario, String senha, int id_titular) {
         this.numero_conta = numero_conta;
         this.titularConta = titularConta;
         this.saldo = saldo;
         this.usuario = usuario;
         this.senha = senha;
+        this.id_titular = id_titular;
     }
 
     public Conta(Pessoa titularConta, String usuario, String senha) {
@@ -64,6 +67,10 @@ public class Conta {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public int getId_titular() {
+        return id_titular;
     }
 
     @Override
