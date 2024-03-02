@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Conta contaLogada = null;
         final Scanner sc = new Scanner(System.in);
 
@@ -28,10 +28,11 @@ public class Main {
                     Conta conta = CreateEnt.criarConta(sc);
                     try {
                         Banco.adicionarConta(conta);
-                    } catch (SQLException exception) {
+                    } catch (RuntimeException exception) {
                         System.out.println(exception.getMessage());
                     }
                 } else {
+                    Banco.atualizarBanco();
                     break;
                 }
 

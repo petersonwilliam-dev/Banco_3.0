@@ -3,7 +3,6 @@ package DAO;
 import connectionDB.ConnectionDB;
 import entidades.Conta;
 
-import javax.naming.ldap.PagedResultsControl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,21 +32,18 @@ public class ContaDAO {
         preparedStatement.setInt(4, id_titular);
 
         preparedStatement.execute();
-        preparedStatement.close();
     }
 
     public static ResultSet retornaContas() throws SQLException{
-        String sql = "SELECT * FROM contas";
+        String sql = "SELECT * FROM contas INNER JOIN pessoas ON contas.id_titular = pessoas.id";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.execute();
-        ResultSet resultSet = preparedStatement.getResultSet();
-        preparedStatement.close();
 
-        return resultSet;
+        return preparedStatement.getResultSet();
     }
 
     public static void editarConta(Conta conta) throws SQLException{
-        String sql = "UPDATE contas SET saldo = ?, usuario = ?, senha = ? WHERE = numero_conta = ?";
+        String sql = "UPDATE contas SET saldo = ?, usuario = ?, senha = ? WHERE numero_conta = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -57,7 +53,6 @@ public class ContaDAO {
         preparedStatement.setInt(4, conta.getNumero_conta());
 
         preparedStatement.execute();
-        preparedStatement.close();
     }
 
     public static void excluirConta(Conta conta) throws SQLException{
@@ -68,6 +63,5 @@ public class ContaDAO {
         preparedStatement.setInt(1, conta.getNumero_conta());
 
         preparedStatement.execute();
-        preparedStatement.close();
     }
 }

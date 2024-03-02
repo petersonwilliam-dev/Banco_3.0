@@ -1,6 +1,7 @@
 package entidades;
 
 import DAO.ContaDAO;
+import DAO.PessoaDAO;
 import sistema.conversor.ConverterEmLista;
 import sistema.entradas.ValidarDadosBancarios;
 
@@ -12,30 +13,39 @@ public class Banco {
     private static List<Conta> contas = new ArrayList<Conta>();
     private static List<Pessoa> pessoas = new ArrayList<Pessoa>();
 
-    public static void adicionarConta(Conta conta) throws SQLException{
-        if (ValidarDadosBancarios.verificaTitular(conta.getTitularConta(), pessoas)) {
-            if (ValidarDadosBancarios.verificaUsuario(conta.getUsuario(), contas)) {
-                pessoas.add(conta.getTitularConta());
-                contas.add(conta);
-            } else {
-                throw new SQLException("USUÁRIO JÁ FOI USADO");
-            }
-        } else {
-            throw new SQLException("CPF JÁ FOI USADO!");
+    static {
+        try {
+            atualizaDados();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
-    public static void excluirConta(Conta conta) {
-        contas.remove(conta);
-        pessoas.remove(conta.getTitularConta());
+    public static void adicionarConta(Conta conta) throws SQLException{
+        if (ValidarDadosBancarios.verificaTitular(conta.getTitularConta(), pessoas)) {
+            if (ValidarDadosBancarios.verificaUsuario(conta.getUsuario(), contas)) {
+                ContaDAO.adicionarConta(conta);
+                atualizaDados();
+            } else {
+                throw new RuntimeException("USUÁRIO JÁ FOI USADO");
+            }
+        } else {
+            throw new RuntimeException("CPF JÁ FOI USADO!");
+        }
     }
 
-    public static void transferência(Conta remetente, Conta destinatário , float valor) {
+    public static void excluirConta(Conta conta) throws SQLException{
+        ContaDAO.excluirConta(conta);
+        atualizaDados();
+    }
+
+    public static void transferência(Conta remetente, Conta destinatário , float valor) throws SQLException{
         try {
             remetente.sacar(valor);
             destinatário.depositar(valor);
+            atualizaDados();
         } catch (RuntimeException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 
@@ -61,4 +71,15 @@ public class Banco {
         throw new RuntimeException("CONTA NÃO ENCONTRADA!");
     }
 
+    public static void atualizarBanco() throws SQLException{
+        for (Conta c : contas) {
+            ContaDAO.editarConta(c);
+            PessoaDAO.editarPessoa(c.getTitularConta());
+        }
+    }
+
+    public static void atualizaDados() throws SQLException{
+        pessoas = ConverterEmLista.retornarListaPessoas();
+        contas = ConverterEmLista.retornaListaContas();
+    }
 }

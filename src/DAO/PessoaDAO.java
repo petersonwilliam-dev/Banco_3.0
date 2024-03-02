@@ -40,9 +40,7 @@ public class PessoaDAO {
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.execute();
 
-        ResultSet resultSet = preparedStatement.getResultSet();
-        preparedStatement.close();
-        return resultSet;
+        return preparedStatement.getResultSet();
     }
 
     public static void editarPessoa(Pessoa pessoa) throws SQLException{
@@ -55,7 +53,6 @@ public class PessoaDAO {
         preparedStatement.setInt(3, pessoa.getId());
 
         preparedStatement.execute();
-        preparedStatement.close();
     }
 
     public static void excluirPessoa(int id) throws SQLException{
@@ -66,6 +63,5 @@ public class PessoaDAO {
         preparedStatement.setInt(1, id);
 
         preparedStatement.execute();
-        preparedStatement.close();
     }
 }
