@@ -3,14 +3,14 @@ package entidades;
 public class Conta {
     private int numero_conta;
     private Pessoa titularConta;
-    private double saldo;
+    private float saldo;
 
     private String usuario;
     private String senha;
 
     private int id_titular;
 
-    public Conta(int numero_conta, Pessoa titularConta, double saldo, String usuario, String senha, int id_titular) {
+    public Conta(int numero_conta, Pessoa titularConta, float saldo, String usuario, String senha, int id_titular) {
         this.numero_conta = numero_conta;
         this.titularConta = titularConta;
         this.saldo = saldo;
@@ -33,7 +33,7 @@ public class Conta {
         return titularConta;
     }
 
-    public double getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 

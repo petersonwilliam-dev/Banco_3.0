@@ -1,5 +1,6 @@
 package sistema.conversor;
 
+import DAO.ContaDAO;
 import DAO.PessoaDAO;
 import entidades.Conta;
 import entidades.Pessoa;
@@ -23,7 +24,8 @@ public class ConverterEmLista {
         return listaPessoas;
     }
 
-    public static List retornaListaContas(ResultSet resultSet)  throws SQLException{
+    public static List retornaListaContas()  throws SQLException{
+        ResultSet resultSet = ContaDAO.retornaContas();
         List listaContas = new ArrayList<Conta>();
         while (resultSet.next()) {
             Pessoa pessoa = new Pessoa(resultSet.getInt(7), resultSet.getString(8), resultSet.getString(9), resultSet.getString(10));

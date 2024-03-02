@@ -1,5 +1,6 @@
 package entidades;
 
+import DAO.ContaDAO;
 import sistema.conversor.ConverterEmLista;
 import sistema.entradas.ValidarDadosBancarios;
 
@@ -11,16 +12,16 @@ public class Banco {
     private static List<Conta> contas = new ArrayList<Conta>();
     private static List<Pessoa> pessoas = new ArrayList<Pessoa>();
 
-    public static void adicionarConta(Conta conta) {
+    public static void adicionarConta(Conta conta) throws SQLException{
         if (ValidarDadosBancarios.verificaTitular(conta.getTitularConta(), pessoas)) {
             if (ValidarDadosBancarios.verificaUsuario(conta.getUsuario(), contas)) {
-                contas.add(conta);
                 pessoas.add(conta.getTitularConta());
+                contas.add(conta);
             } else {
-                throw new RuntimeException("USUÁRIO JÁ FOI USADO");
+                throw new SQLException("USUÁRIO JÁ FOI USADO");
             }
         } else {
-            throw new RuntimeException("CPF JÁ FOI USADO!");
+            throw new SQLException("CPF JÁ FOI USADO!");
         }
     }
 

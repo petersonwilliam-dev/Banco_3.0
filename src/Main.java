@@ -4,6 +4,7 @@ import sistema.entradas.ValidarEntradas;
 import sistema.user_interface.CreateEnt;
 import sistema.user_interface.Interface;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
@@ -27,7 +28,7 @@ public class Main {
                     Conta conta = CreateEnt.criarConta(sc);
                     try {
                         Banco.adicionarConta(conta);
-                    } catch (RuntimeException exception) {
+                    } catch (SQLException exception) {
                         System.out.println(exception.getMessage());
                     }
                 } else {

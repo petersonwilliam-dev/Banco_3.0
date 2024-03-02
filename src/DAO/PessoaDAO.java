@@ -3,10 +3,7 @@ package DAO;
 import connectionDB.ConnectionDB;
 import entidades.Pessoa;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class PessoaDAO {
     private static Connection connection;
@@ -19,17 +16,22 @@ public class PessoaDAO {
         }
     }
 
-    public static void adicionarPessoa(Pessoa pessoa) throws SQLException{
+    public static int adicionarPessoa(Pessoa pessoa) throws SQLException{
         String sql = "INSERT INTO pessoas (nome, cpf, numero_telefone) VALUES (?, ?, ?)";
 
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
         preparedStatement.setString(1, pessoa.getNome());
         preparedStatement.setString(2, pessoa.getCpf());
         preparedStatement.setString(3, pessoa.getNumero_telefone());
 
         preparedStatement.execute();
-        preparedStatement.close();
+
+        ResultSet resultSet = preparedStatement.getGeneratedKeys();
+        resultSet.next();
+        int id_titular = resultSet.getInt(1);
+
+        return id_titular;
     }
 
     public static ResultSet retornaPessoas() throws SQLException{
