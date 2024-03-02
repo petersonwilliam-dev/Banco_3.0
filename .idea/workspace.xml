@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="919fa7ba-ebcf-44db-9b0d-2915126f0ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Banco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entidades/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entidades/Conta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sistema/user_interface/CreateEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sistema/user_interface/CreateEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sistema/user_interface/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sistema/user_interface/Interface.java" afterDir="false" />
-    </list>
+    <list default="true" id="919fa7ba-ebcf-44db-9b0d-2915126f0ceb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,16 +29,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/willi/OneDrive/Área de Trabalho/Projetinhos/Java/Banco_3.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/willi/OneDrive/Área de Trabalho/Projetinhos/Java/Banco_3.0/lib"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\willi\OneDrive\Área de Trabalho\Projetinhos\Java\Banco_3.0\lib" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
