@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class CreateEnt {
     public static Pessoa criarPessoa(Scanner sc) {
         String nome = ValidarEntradas.recebeString(sc, "DIGITE SEU NOME: ");
-        String CPF = ValidarEntradas.recebeString(sc, "DIGITE SEU CPF (SOMENTE OS NÚMEROS): ");
-        String numero_telefone = ValidarEntradas.recebeString(sc, "DIGITE SEU NÚMERO DE TELEFONE: ");
+        String CPF = ValidarEntradas.recebeString(sc, "DIGITE SEU CPF (XXX.XXX.XXX-XX): ");
+        String numero_telefone = ValidarEntradas.recebeString(sc, "DIGITE SEU NÚMERO DE TELEFONE ((XX)XXXXX-XXXX): ");
 
         Pessoa pessoa = new Pessoa(nome, CPF, numero_telefone);
         return pessoa;

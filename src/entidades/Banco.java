@@ -43,7 +43,6 @@ public class Banco {
         try {
             remetente.sacar(valor);
             destinatário.depositar(valor);
-            atualizaDados();
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
