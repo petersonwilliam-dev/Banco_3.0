@@ -1,7 +1,9 @@
 package entidades;
 
+import sistema.conversor.ConverterEmLista;
 import sistema.entradas.ValidarDadosBancarios;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,4 +59,5 @@ public class Banco {
         }
         throw new RuntimeException("CONTA NÃO ENCONTRADA!");
     }
+
 }
