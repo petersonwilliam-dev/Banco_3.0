@@ -14,7 +14,6 @@ public class CreateEnt {
 
         Pessoa pessoa = new Pessoa(nome, CPF, numero_telefone);
         return pessoa;
-
     }
 
     public static Conta criarConta(Scanner sc) {

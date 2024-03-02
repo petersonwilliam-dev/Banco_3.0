@@ -65,4 +65,11 @@ public class Conta {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    @Override
+    public String toString() {
+        return "N° Conta: " + getNumero_conta() + "\n" +
+                "Saldo: " + getSaldo() + "\n" +
+                "Nome do titular: " + getTitularConta().getNome();
+    }
 }
