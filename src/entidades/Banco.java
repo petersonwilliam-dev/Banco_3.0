@@ -39,7 +39,7 @@ public class Banco {
         atualizaDados();
     }
 
-    public static void transferência(Conta remetente, Conta destinatário , float valor) throws SQLException{
+    public static void transferência(Conta remetente, Conta destinatário , float valor) {
         try {
             remetente.sacar(valor);
             destinatário.depositar(valor);
