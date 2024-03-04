@@ -46,7 +46,6 @@ public class Main {
                     } catch (RuntimeException exception) {
                         System.out.println(exception.getMessage());
                     }
-                    contaLogada.depositar(valor);
                 } else if (opcao == 2) {
                     float valor = ValidarEntradas.recebeFloat(sc, "DIGITE O VALOR QUE VOCÊ DESEJA SACAR: ");
                     try {
