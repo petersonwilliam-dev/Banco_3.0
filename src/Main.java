@@ -61,8 +61,12 @@ public class Main {
                 } else if (opcao == 3) {
                     float valor = ValidarEntradas.recebeFloat(sc, "DIGITE O VALOR QUE VOCÊ DESEJA TRANSFERIR: ");
                     int numero_conta_destinatario = ValidarEntradas.recebeInteiro(sc, "DIGITE O NÚMERO DA CONTA DO DESTINATÁRIO: ");
-                    Conta conta_destinatario = Banco.buscarConta(numero_conta_destinatario);
-                    Banco.transferência(contaLogada, conta_destinatario, valor);
+                    try {
+                        Conta conta_destinatario = Banco.buscarConta(numero_conta_destinatario);
+                        Banco.transferência(contaLogada, conta_destinatario, valor);
+                    } catch (Exception exception){
+                        System.out.println(exception.getMessage());
+                    }
                 } else if (opcao == 4) {
                     System.out.println(contaLogada);
                 } else if (opcao == 5) {

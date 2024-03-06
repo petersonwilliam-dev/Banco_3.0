@@ -39,13 +39,9 @@ public class Banco {
         atualizaDados();
     }
 
-    public static void transferência(Conta remetente, Conta destinatário , float valor) {
-        try {
-            remetente.sacar(valor);
-            destinatário.depositar(valor);
-        } catch (RuntimeException e) {
-            System.out.println(e.getMessage());
-        }
+    public static void transferência(Conta remetente, Conta destinatário , float valor) throws RuntimeException{
+        remetente.sacar(valor);
+        destinatário.depositar(valor);
     }
 
     public static Conta buscarConta(String usuario, String senha) {
